@@ -1,0 +1,83 @@
+% NEW!
+% package options 
+%
+% difcul          - Generates DI/FCUL cover pages
+% msc - MSc dissertation
+% bc, bio   - Thesis specialization (bioinformatica, biologica computacional)
+\documentclass[twoside,12pt,difcul,bio,msc]{Classes/FCULthesisPSnPDF}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{color,array,colortbl} 
+\usepackage{amssymb}
+
+\usepackage{framed}
+\usepackage{soul}
+
+\definecolor{light-gray}{gray}{0.9}
+\sethlcolor{light-gray}
+
+%input macros (i.e. write your own macros file called preamble.tex)
+%\include{Macros/macros}
+
+
+\begin{document}
+
+\title{Thesis' Title}
+\author{Your Name}
+\authemail{Your Email}
+\thesisadvisor{Your Supervisor}{1} %1 - male 2 - female
+\thesiscoadvisor{}{1}
+\keywords{keywords}
+\keywordspt{palavras chave}
+\degreedate{YYYY}
+%\thextjuri{Miguel Francisco Almeida Pereira Rocha}
+%\thintjuri{Andr\'{e} Os\'{o}rio e Cruz de Azer\^{e}do Falc\~{a}o}{Jo\~{a}o Pedro Guerreiro Neto}
+
+\frontmatter
+\maketitle
+
+%set the number of sectioning levels that get number and appear in the contents
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+
+
+\includex{Preface}{resumo}
+\includex{Preface}{abstract}
+\includex{Preface}{resumolongo}
+\includex{Preface}{acknowledgements}
+\includex{Preface}{dedication}
+
+\tableofcontents
+\listoffigures
+\listoftables
+%\listofalgorithms
+%\lstlistoflistings
+%\printglossary
+%\addcontentsline{toc}{chapter}{Nomenclature}
+%\include{Conventions/conventions}
+
+\mainmatter
+
+\chapter{Chapter name}
+\inputx{Chapters}{1_introduction} % tex file in Chapters/
+\inputx{Chapters}{5_validation} % tex file in Chapters/
+
+
+
+%\appendix
+%\chapter{Listing of Patent Documents in Gold Standard}
+%\label{ap:grl}
+%\inputx{Appendix}{grl}
+
+
+\backmatter
+\phantomsection
+\addcontentsline{toc}{chapter}{References}
+\bibliographystyle{Classes/jmb}
+\bibliography{References/thesis}
+
+\end{document}
